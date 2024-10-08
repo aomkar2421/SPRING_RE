@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.om.CI.Address" id="add">
+		<constructor-arg value="Rajewadi" />
+		<constructor-arg value="412104" />
+
+	</bean>
+
+	<bean class="com.om.CI.Student" id="std">
+		<constructor-arg type="java.lang.String" value="Omkar" />
+		<constructor-arg type="int" value="1651" />
+		<constructor-arg ref="add" />
+		<constructor-arg>
+			<list>
+				<value type="java.lang.List">8585875858</value>
+				<value type="java.lang.List">78687687687</value>
+				<value type="java.lang.List">499494449</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+
+</beans>
