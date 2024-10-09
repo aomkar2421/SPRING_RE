@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.om.xml.Address" id="add">
+		<property name="city" value="saswada"/>
+		<property name="pin" value="4121041"/>
+	</bean>
+
+	<!--<bean class="com.om.xml.Student" id="std" autowire="byName">
+		<property name="name" value="omkar"></property>
+	</bean>-->
+	
+	<!--<bean class="com.om.xml.Student" id="std" autowire="byType">
+		<property name="name" value="omkar"></property>
+	</bean>-->
+
+	<bean class="com.om.xml.Student" id="std" autowire="constructor">
+		<constructor-arg value="omkar" />
+	</bean>
+
+</beans>
