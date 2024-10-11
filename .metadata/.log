@@ -5365,3 +5365,1442 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-10-09 22:30:47.939
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.egit.ui.internal.push.PushJob RUNNING
+	 at java.base/sun.nio.ch.Net.poll(Native Method)
+	 at java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+	 at java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:201)
+	 at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:412)
+	 at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:440)
+	 at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:819)
+	 at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1195)
+	 at java.base/sun.security.ssl.SSLSocketOutputRecord.deliver(SSLSocketOutputRecord.java:345)
+	 at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(SSLSocketImpl.java:1304)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.streamWrite(SessionOutputBufferImpl.java:124)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.flushBuffer(SessionOutputBufferImpl.java:136)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.write(SessionOutputBufferImpl.java:167)
+	 at org.apache.http.impl.io.ChunkedOutputStream.flushCacheWithAppend(ChunkedOutputStream.java:122)
+	 at org.apache.http.impl.io.ChunkedOutputStream.write(ChunkedOutputStream.java:179)
+	 at org.eclipse.jgit.util.TemporaryBuffer$LocalFile.writeTo(TemporaryBuffer.java:524)
+	 at org.eclipse.jgit.transport.http.apache.TemporaryBufferEntity.writeTo(TemporaryBufferEntity.java:71)
+	 at org.apache.http.impl.DefaultBHttpClientConnection.sendRequestEntity(DefaultBHttpClientConnection.java:156)
+	 at org.apache.http.impl.conn.CPoolProxy.sendRequestEntity(CPoolProxy.java:152)
+	 at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:238)
+	 at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	 at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	 at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	 at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	 at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	 at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	 at org.eclipse.jgit.transport.http.apache.HttpClientConnection.execute(HttpClientConnection.java:290)
+	 at org.eclipse.jgit.transport.http.apache.HttpClientConnection.getResponseCode(HttpClientConnection.java:260)
+	 at org.eclipse.jgit.util.HttpSupport.response(HttpSupport.java:232)
+	 at org.eclipse.jgit.transport.TransportHttp$Service.openResponse(TransportHttp.java:1826)
+	 at org.eclipse.jgit.transport.TransportHttp$MultiRequestService.execute(TransportHttp.java:1934)
+	 at org.eclipse.jgit.transport.TransportHttp$Service$HttpExecuteStream.read(TransportHttp.java:1858)
+	 at org.eclipse.jgit.util.io.UnionInputStream.read(UnionInputStream.java:114)
+	 at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
+	 at org.eclipse.jgit.util.io.TimeoutInputStream.read(TimeoutInputStream.java:87)
+	 at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	 at org.eclipse.jgit.util.IO.readFully(IO.java:142)
+	 at org.eclipse.jgit.transport.PacketLineIn.readLength(PacketLineIn.java:305)
+	 at org.eclipse.jgit.transport.SideBandInputStream.needDataPacket(SideBandInputStream.java:128)
+	 at org.eclipse.jgit.transport.SideBandInputStream.read(SideBandInputStream.java:110)
+	 at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	 at org.eclipse.jgit.util.IO.readFully(IO.java:142)
+	 at org.eclipse.jgit.transport.PacketLineIn.readLength(PacketLineIn.java:305)
+	 at org.eclipse.jgit.transport.PacketLineIn.readString(PacketLineIn.java:169)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.readStringLongTimeout(BasePackPushConnection.java:407)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.readStatusReport(BasePackPushConnection.java:340)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.doPush(BasePackPushConnection.java:188)
+	 at org.eclipse.jgit.transport.TransportHttp$SmartHttpPushConnection.doPush(TransportHttp.java:1600)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.push(BasePackPushConnection.java:137)
+	 at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:181)
+	 at org.eclipse.jgit.transport.Transport.push(Transport.java:1533)
+	 at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	 at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	 at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-10-09 22:30:47.943
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.egit.ui.internal.push.PushJob RUNNING
+	 at java.base/sun.nio.ch.Net.poll(Native Method)
+	 at java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+	 at java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:201)
+	 at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:412)
+	 at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:440)
+	 at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:819)
+	 at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1195)
+	 at java.base/sun.security.ssl.SSLSocketOutputRecord.deliver(SSLSocketOutputRecord.java:345)
+	 at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(SSLSocketImpl.java:1304)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.streamWrite(SessionOutputBufferImpl.java:124)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.flushBuffer(SessionOutputBufferImpl.java:136)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.write(SessionOutputBufferImpl.java:167)
+	 at org.apache.http.impl.io.ChunkedOutputStream.flushCacheWithAppend(ChunkedOutputStream.java:122)
+	 at org.apache.http.impl.io.ChunkedOutputStream.write(ChunkedOutputStream.java:179)
+	 at org.eclipse.jgit.util.TemporaryBuffer$LocalFile.writeTo(TemporaryBuffer.java:524)
+	 at org.eclipse.jgit.transport.http.apache.TemporaryBufferEntity.writeTo(TemporaryBufferEntity.java:71)
+	 at org.apache.http.impl.DefaultBHttpClientConnection.sendRequestEntity(DefaultBHttpClientConnection.java:156)
+	 at org.apache.http.impl.conn.CPoolProxy.sendRequestEntity(CPoolProxy.java:152)
+	 at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:238)
+	 at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	 at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	 at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	 at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	 at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	 at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	 at org.eclipse.jgit.transport.http.apache.HttpClientConnection.execute(HttpClientConnection.java:290)
+	 at org.eclipse.jgit.transport.http.apache.HttpClientConnection.getResponseCode(HttpClientConnection.java:260)
+	 at org.eclipse.jgit.util.HttpSupport.response(HttpSupport.java:232)
+	 at org.eclipse.jgit.transport.TransportHttp$Service.openResponse(TransportHttp.java:1826)
+	 at org.eclipse.jgit.transport.TransportHttp$MultiRequestService.execute(TransportHttp.java:1934)
+	 at org.eclipse.jgit.transport.TransportHttp$Service$HttpExecuteStream.read(TransportHttp.java:1858)
+	 at org.eclipse.jgit.util.io.UnionInputStream.read(UnionInputStream.java:114)
+	 at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
+	 at org.eclipse.jgit.util.io.TimeoutInputStream.read(TimeoutInputStream.java:87)
+	 at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	 at org.eclipse.jgit.util.IO.readFully(IO.java:142)
+	 at org.eclipse.jgit.transport.PacketLineIn.readLength(PacketLineIn.java:305)
+	 at org.eclipse.jgit.transport.SideBandInputStream.needDataPacket(SideBandInputStream.java:128)
+	 at org.eclipse.jgit.transport.SideBandInputStream.read(SideBandInputStream.java:110)
+	 at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	 at org.eclipse.jgit.util.IO.readFully(IO.java:142)
+	 at org.eclipse.jgit.transport.PacketLineIn.readLength(PacketLineIn.java:305)
+	 at org.eclipse.jgit.transport.PacketLineIn.readString(PacketLineIn.java:169)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.readStringLongTimeout(BasePackPushConnection.java:407)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.readStatusReport(BasePackPushConnection.java:340)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.doPush(BasePackPushConnection.java:188)
+	 at org.eclipse.jgit.transport.TransportHttp$SmartHttpPushConnection.doPush(TransportHttp.java:1600)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.push(BasePackPushConnection.java:137)
+	 at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:181)
+	 at org.eclipse.jgit.transport.Transport.push(Transport.java:1533)
+	 at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	 at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	 at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-10-09 22:30:47.946
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.egit.ui.internal.push.PushJob RUNNING
+	 at java.base/sun.nio.ch.Net.poll(Native Method)
+	 at java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+	 at java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:201)
+	 at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:412)
+	 at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:440)
+	 at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:819)
+	 at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1195)
+	 at java.base/sun.security.ssl.SSLSocketOutputRecord.deliver(SSLSocketOutputRecord.java:345)
+	 at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(SSLSocketImpl.java:1304)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.streamWrite(SessionOutputBufferImpl.java:124)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.flushBuffer(SessionOutputBufferImpl.java:136)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.write(SessionOutputBufferImpl.java:167)
+	 at org.apache.http.impl.io.ChunkedOutputStream.flushCacheWithAppend(ChunkedOutputStream.java:122)
+	 at org.apache.http.impl.io.ChunkedOutputStream.write(ChunkedOutputStream.java:179)
+	 at org.eclipse.jgit.util.TemporaryBuffer$LocalFile.writeTo(TemporaryBuffer.java:524)
+	 at org.eclipse.jgit.transport.http.apache.TemporaryBufferEntity.writeTo(TemporaryBufferEntity.java:71)
+	 at org.apache.http.impl.DefaultBHttpClientConnection.sendRequestEntity(DefaultBHttpClientConnection.java:156)
+	 at org.apache.http.impl.conn.CPoolProxy.sendRequestEntity(CPoolProxy.java:152)
+	 at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:238)
+	 at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	 at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	 at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	 at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	 at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	 at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	 at org.eclipse.jgit.transport.http.apache.HttpClientConnection.execute(HttpClientConnection.java:290)
+	 at org.eclipse.jgit.transport.http.apache.HttpClientConnection.getResponseCode(HttpClientConnection.java:260)
+	 at org.eclipse.jgit.util.HttpSupport.response(HttpSupport.java:232)
+	 at org.eclipse.jgit.transport.TransportHttp$Service.openResponse(TransportHttp.java:1826)
+	 at org.eclipse.jgit.transport.TransportHttp$MultiRequestService.execute(TransportHttp.java:1934)
+	 at org.eclipse.jgit.transport.TransportHttp$Service$HttpExecuteStream.read(TransportHttp.java:1858)
+	 at org.eclipse.jgit.util.io.UnionInputStream.read(UnionInputStream.java:114)
+	 at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
+	 at org.eclipse.jgit.util.io.TimeoutInputStream.read(TimeoutInputStream.java:87)
+	 at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	 at org.eclipse.jgit.util.IO.readFully(IO.java:142)
+	 at org.eclipse.jgit.transport.PacketLineIn.readLength(PacketLineIn.java:305)
+	 at org.eclipse.jgit.transport.SideBandInputStream.needDataPacket(SideBandInputStream.java:128)
+	 at org.eclipse.jgit.transport.SideBandInputStream.read(SideBandInputStream.java:110)
+	 at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	 at org.eclipse.jgit.util.IO.readFully(IO.java:142)
+	 at org.eclipse.jgit.transport.PacketLineIn.readLength(PacketLineIn.java:305)
+	 at org.eclipse.jgit.transport.PacketLineIn.readString(PacketLineIn.java:169)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.readStringLongTimeout(BasePackPushConnection.java:407)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.readStatusReport(BasePackPushConnection.java:340)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.doPush(BasePackPushConnection.java:188)
+	 at org.eclipse.jgit.transport.TransportHttp$SmartHttpPushConnection.doPush(TransportHttp.java:1600)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.push(BasePackPushConnection.java:137)
+	 at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:181)
+	 at org.eclipse.jgit.transport.Transport.push(Transport.java:1533)
+	 at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	 at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	 at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-10-09 22:30:47.949
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.egit.ui.internal.push.PushJob RUNNING
+	 at java.base/sun.nio.ch.Net.poll(Native Method)
+	 at java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+	 at java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:201)
+	 at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:412)
+	 at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:440)
+	 at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:819)
+	 at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1195)
+	 at java.base/sun.security.ssl.SSLSocketOutputRecord.deliver(SSLSocketOutputRecord.java:345)
+	 at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(SSLSocketImpl.java:1304)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.streamWrite(SessionOutputBufferImpl.java:124)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.flushBuffer(SessionOutputBufferImpl.java:136)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.write(SessionOutputBufferImpl.java:167)
+	 at org.apache.http.impl.io.ChunkedOutputStream.flushCacheWithAppend(ChunkedOutputStream.java:122)
+	 at org.apache.http.impl.io.ChunkedOutputStream.write(ChunkedOutputStream.java:179)
+	 at org.eclipse.jgit.util.TemporaryBuffer$LocalFile.writeTo(TemporaryBuffer.java:524)
+	 at org.eclipse.jgit.transport.http.apache.TemporaryBufferEntity.writeTo(TemporaryBufferEntity.java:71)
+	 at org.apache.http.impl.DefaultBHttpClientConnection.sendRequestEntity(DefaultBHttpClientConnection.java:156)
+	 at org.apache.http.impl.conn.CPoolProxy.sendRequestEntity(CPoolProxy.java:152)
+	 at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:238)
+	 at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	 at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	 at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	 at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	 at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	 at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	 at org.eclipse.jgit.transport.http.apache.HttpClientConnection.execute(HttpClientConnection.java:290)
+	 at org.eclipse.jgit.transport.http.apache.HttpClientConnection.getResponseCode(HttpClientConnection.java:260)
+	 at org.eclipse.jgit.util.HttpSupport.response(HttpSupport.java:232)
+	 at org.eclipse.jgit.transport.TransportHttp$Service.openResponse(TransportHttp.java:1826)
+	 at org.eclipse.jgit.transport.TransportHttp$MultiRequestService.execute(TransportHttp.java:1934)
+	 at org.eclipse.jgit.transport.TransportHttp$Service$HttpExecuteStream.read(TransportHttp.java:1858)
+	 at org.eclipse.jgit.util.io.UnionInputStream.read(UnionInputStream.java:114)
+	 at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
+	 at org.eclipse.jgit.util.io.TimeoutInputStream.read(TimeoutInputStream.java:87)
+	 at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	 at org.eclipse.jgit.util.IO.readFully(IO.java:142)
+	 at org.eclipse.jgit.transport.PacketLineIn.readLength(PacketLineIn.java:305)
+	 at org.eclipse.jgit.transport.SideBandInputStream.needDataPacket(SideBandInputStream.java:128)
+	 at org.eclipse.jgit.transport.SideBandInputStream.read(SideBandInputStream.java:110)
+	 at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	 at org.eclipse.jgit.util.IO.readFully(IO.java:142)
+	 at org.eclipse.jgit.transport.PacketLineIn.readLength(PacketLineIn.java:305)
+	 at org.eclipse.jgit.transport.PacketLineIn.readString(PacketLineIn.java:169)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.readStringLongTimeout(BasePackPushConnection.java:407)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.readStatusReport(BasePackPushConnection.java:340)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.doPush(BasePackPushConnection.java:188)
+	 at org.eclipse.jgit.transport.TransportHttp$SmartHttpPushConnection.doPush(TransportHttp.java:1600)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.push(BasePackPushConnection.java:137)
+	 at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:181)
+	 at org.eclipse.jgit.transport.Transport.push(Transport.java:1533)
+	 at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	 at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	 at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-10-09 22:30:47.951
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.egit.ui.internal.push.PushJob RUNNING
+	 at java.base/sun.nio.ch.Net.poll(Native Method)
+	 at java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+	 at java.base/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:201)
+	 at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:412)
+	 at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:440)
+	 at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:819)
+	 at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1195)
+	 at java.base/sun.security.ssl.SSLSocketOutputRecord.deliver(SSLSocketOutputRecord.java:345)
+	 at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(SSLSocketImpl.java:1304)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.streamWrite(SessionOutputBufferImpl.java:124)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.flushBuffer(SessionOutputBufferImpl.java:136)
+	 at org.apache.http.impl.io.SessionOutputBufferImpl.write(SessionOutputBufferImpl.java:167)
+	 at org.apache.http.impl.io.ChunkedOutputStream.flushCacheWithAppend(ChunkedOutputStream.java:122)
+	 at org.apache.http.impl.io.ChunkedOutputStream.write(ChunkedOutputStream.java:179)
+	 at org.eclipse.jgit.util.TemporaryBuffer$LocalFile.writeTo(TemporaryBuffer.java:524)
+	 at org.eclipse.jgit.transport.http.apache.TemporaryBufferEntity.writeTo(TemporaryBufferEntity.java:71)
+	 at org.apache.http.impl.DefaultBHttpClientConnection.sendRequestEntity(DefaultBHttpClientConnection.java:156)
+	 at org.apache.http.impl.conn.CPoolProxy.sendRequestEntity(CPoolProxy.java:152)
+	 at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:238)
+	 at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	 at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	 at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	 at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	 at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	 at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	 at org.eclipse.jgit.transport.http.apache.HttpClientConnection.execute(HttpClientConnection.java:290)
+	 at org.eclipse.jgit.transport.http.apache.HttpClientConnection.getResponseCode(HttpClientConnection.java:260)
+	 at org.eclipse.jgit.util.HttpSupport.response(HttpSupport.java:232)
+	 at org.eclipse.jgit.transport.TransportHttp$Service.openResponse(TransportHttp.java:1826)
+	 at org.eclipse.jgit.transport.TransportHttp$MultiRequestService.execute(TransportHttp.java:1934)
+	 at org.eclipse.jgit.transport.TransportHttp$Service$HttpExecuteStream.read(TransportHttp.java:1858)
+	 at org.eclipse.jgit.util.io.UnionInputStream.read(UnionInputStream.java:114)
+	 at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
+	 at org.eclipse.jgit.util.io.TimeoutInputStream.read(TimeoutInputStream.java:87)
+	 at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	 at org.eclipse.jgit.util.IO.readFully(IO.java:142)
+	 at org.eclipse.jgit.transport.PacketLineIn.readLength(PacketLineIn.java:305)
+	 at org.eclipse.jgit.transport.SideBandInputStream.needDataPacket(SideBandInputStream.java:128)
+	 at org.eclipse.jgit.transport.SideBandInputStream.read(SideBandInputStream.java:110)
+	 at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	 at org.eclipse.jgit.util.IO.readFully(IO.java:142)
+	 at org.eclipse.jgit.transport.PacketLineIn.readLength(PacketLineIn.java:305)
+	 at org.eclipse.jgit.transport.PacketLineIn.readString(PacketLineIn.java:169)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.readStringLongTimeout(BasePackPushConnection.java:407)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.readStatusReport(BasePackPushConnection.java:340)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.doPush(BasePackPushConnection.java:188)
+	 at org.eclipse.jgit.transport.TransportHttp$SmartHttpPushConnection.doPush(TransportHttp.java:1600)
+	 at org.eclipse.jgit.transport.BasePackPushConnection.push(BasePackPushConnection.java:137)
+	 at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:181)
+	 at org.eclipse.jgit.transport.Transport.push(Transport.java:1533)
+	 at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	 at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	 at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2024-10-10 10:40:47.100 -----------------------------------------------
+eclipse.buildId=4.25.0.202409101855
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY ch.qos.logback.classic 1 0 2024-10-10 10:41:59.488
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-10-10 10:47:06.865
+!MESSAGE Logback config file: D:\SPRING_PRACTISE\SPRING_RE\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.ui 2 0 2024-10-10 10:47:08.922
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-10-10 10:47:08.922
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2024-10-10 10:47:09.707
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-10-10 10:47:09.707
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-10 10:47:16.095
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+S:\Current Softwares\spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64\sts-4.25.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-XX:ErrorFile=D:/SPRING_PRACTISE/SPRING_RE/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1728537436095
+-Dlanguageserver.hover-timeout=225
+-jar
+S:\Current Softwares\spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64\sts-4.25.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.57.0.202409101848\servers\spring-boot-language-server\spring-boot-language-server-1.57.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:47:16.096
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-10 10:47:16.112
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 14188
+
+!ENTRY org.eclipse.core.resources 4 567 2024-10-10 10:47:20.480
+!MESSAGE Failure occurred reading .project file.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2024-10-10 10:47:20.483
+!MESSAGE Could not read metadata for '.org.eclipse.egit.core.cmp'.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:978)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:114)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.core.internal.resources.ProjectDescriptionReader.read(ProjectDescriptionReader.java:959)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:959)
+	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:326)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.createProject(HiddenResources.java:285)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.getHiddenProject(HiddenResources.java:271)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.initialize(HiddenResources.java:127)
+	at org.eclipse.core.runtime.jobs.Job$2.run(Job.java:187)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.core.resources 2 567 2024-10-10 10:47:20.484
+!MESSAGE Could not read metadata for '.org.eclipse.egit.core.cmp'.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:978)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:114)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.core.internal.resources.ProjectDescriptionReader.read(ProjectDescriptionReader.java:959)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:959)
+	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:326)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.createProject(HiddenResources.java:285)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.getHiddenProject(HiddenResources.java:271)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.initialize(HiddenResources.java:127)
+	at org.eclipse.core.runtime.jobs.Job$2.run(Job.java:187)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.core 2 0 2024-10-10 10:47:20.516
+!MESSAGE Cannot clean up internal hidden project
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/.org.eclipse.egit.core.cmp)[567]: java.lang.Exception: Failed to read the project description file (.project) for '.org.eclipse.egit.core.cmp'.  The file has been changed on disk, and it now contains invalid information.  The project will not function properly until the description file is restored to a valid state.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:979)
+	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:326)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.createProject(HiddenResources.java:285)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.getHiddenProject(HiddenResources.java:271)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.initialize(HiddenResources.java:127)
+	at org.eclipse.core.runtime.jobs.Job$2.run(Job.java:187)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2024-10-10 10:47:20.541
+!MESSAGE Failed to read the project description file (.project) for '.org.eclipse.egit.core.cmp'.  The file has been changed on disk, and it now contains invalid information.  The project will not function properly until the description file is restored to a valid state.
+!STACK 0
+java.lang.Exception: Failed to read the project description file (.project) for '.org.eclipse.egit.core.cmp'.  The file has been changed on disk, and it now contains invalid information.  The project will not function properly until the description file is restored to a valid state.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:979)
+	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:326)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.createProject(HiddenResources.java:285)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.getHiddenProject(HiddenResources.java:271)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.initialize(HiddenResources.java:127)
+	at org.eclipse.core.runtime.jobs.Job$2.run(Job.java:187)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:47:20.542
+!MESSAGE Boot project ADDED: 01_Spring_Core
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:47:20.543
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:47:20.548
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:47:20.551
+!MESSAGE Boot project ADDED: 02_Spring_Lifecycle
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:47:20.553
+!MESSAGE Boot project ADDED: 03_Spring_Autowiring
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-10-10 10:47:20.584
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ADMIN'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:51:28.886
+!MESSAGE Classpath changed for project: 04_Spring_JDBC
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-10 10:53:30.415
+!MESSAGE Could not get hover region due to timeout after 1000 milliseconds
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverRegion(LSPTextHover.java:149)
+	at org.eclipse.ui.internal.genericeditor.hover.CompositeTextHover.getHoverRegion(CompositeTextHover.java:101)
+	at org.eclipse.jface.text.TextViewerHoverManager.computeInformation(TextViewerHoverManager.java:128)
+	at org.eclipse.jface.text.AbstractInformationControlManager.doShowInformation(AbstractInformationControlManager.java:1101)
+	at org.eclipse.jface.text.AbstractHoverInformationControlManager$MouseTracker.mouseHover(AbstractHoverInformationControlManager.java:511)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:225)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4326)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1174)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4124)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3712)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-10 10:53:30.474
+!MESSAGE Could not get trigger characters due to timeout after 50 milliseconds
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.operations.completion.LSContentAssistProcessor.getFuture(LSContentAssistProcessor.java:336)
+	at org.eclipse.lsp4e.operations.completion.LSContentAssistProcessor.getCompletionProposalAutoActivationCharacters(LSContentAssistProcessor.java:377)
+	at org.eclipse.jface.text.contentassist.IContentAssistProcessorExtension$1.isCompletionProposalAutoActivation(IContentAssistProcessorExtension.java:115)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.getAutoActivationTriggerType(ContentAssistant.java:1249)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$AutoAssistListener.keyPressed(ContentAssistant.java:346)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$AutoAssistListener.verifyKey(ContentAssistant.java:375)
+	at org.eclipse.jface.text.TextViewer$VerifyKeyListenersManager.verifyKey(TextViewer.java:482)
+	at org.eclipse.swt.custom.StyledTextListener.handleEvent(StyledTextListener.java:68)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4326)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1174)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1198)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1183)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:853)
+	at org.eclipse.swt.custom.StyledText.handleKeyDown(StyledText.java:5740)
+	at org.eclipse.swt.custom.StyledText.lambda$28(StyledText.java:5424)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4326)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1174)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1198)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1183)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1225)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1221)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1704)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4849)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:347)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4727)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5091)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3710)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-10 10:53:30.492
+!MESSAGE InterruptedException
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfo(LSPTextHover.java:73)
+	at org.eclipse.ui.internal.genericeditor.hover.CompositeTextHover.getHoverInfo2(CompositeTextHover.java:60)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jface.text 4 2 2024-10-10 10:53:30.552
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jface.text".
+!STACK 0
+java.util.concurrent.CancellationException
+	at java.base/java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2510)
+	at org.eclipse.lsp4e.internal.CancellationSupport.cancel(CancellationSupport.java:52)
+	at org.eclipse.lsp4e.operations.completion.LSContentAssistProcessor.computeCompletionProposals(LSContentAssistProcessor.java:139)
+	at org.eclipse.jface.text.contentassist.AsyncCompletionProposalPopup.lambda$10(AsyncCompletionProposalPopup.java:378)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jface.text.contentassist.AsyncCompletionProposalPopup.lambda$9(AsyncCompletionProposalPopup.java:377)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-10-10 10:53:39.466
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.31 has been relocated to com.mysql:mysql-connector-j:jar:8.0.31: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-10-10 10:53:52.232
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.31 has been relocated to com.mysql:mysql-connector-j:jar:8.0.31: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:53:53.193
+!MESSAGE Classpath changed for project: 04_Spring_JDBC
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:53:53.196
+!MESSAGE Boot project ADDED: 04_Spring_JDBC
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:53:53.287
+!MESSAGE Classpath changed for project: 04_Spring_JDBC
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 10:54:25.228
+!MESSAGE Classpath changed for project: 04_Spring_JDBC
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-10 11:08:08.141
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.core.jobs 4 2 2024-10-10 11:15:48.089
+!MESSAGE An internal error occurred during: "Processing JDT Change Events".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.core.resources.IResourceDelta.getResource()" because "resourceDelta" is null
+	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathListenerManager$MyListener.isClasspathManifestFileChanged(ClasspathListenerManager.java:133)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathListenerManager$MyListener.visit(ClasspathListenerManager.java:81)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathListenerManager$MyListener.visitChildren(ClasspathListenerManager.java:162)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathListenerManager$MyListener.visit(ClasspathListenerManager.java:73)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathListenerManager$MyListener.lambda$0(ClasspathListenerManager.java:65)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathListenerManager$1.run(ClasspathListenerManager.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 2 2024-10-10 11:15:48.092
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.core.resources.IResourceDelta.getKind()" because "resourceDelta" is null
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.handleAffectedChildren(PackageExplorerContentProvider.java:773)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.processDelta(PackageExplorerContentProvider.java:758)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.handleAffectedChildren(PackageExplorerContentProvider.java:815)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.processDelta(PackageExplorerContentProvider.java:758)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.elementChanged(PackageExplorerContentProvider.java:139)
+	at org.eclipse.jdt.internal.core.DeltaProcessor$3.run(DeltaProcessor.java:1751)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.notifyListeners(DeltaProcessor.java:1739)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.firePostChangeDelta(DeltaProcessor.java:1572)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.fire(DeltaProcessor.java:1548)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.notifyAndFire(DeltaProcessor.java:2259)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.resourceChanged(DeltaProcessor.java:2151)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState.resourceChanged(DeltaProcessingState.java:501)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:321)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:311)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:174)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:459)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1587)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2465)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2471)
+	at org.eclipse.debug.core.model.LaunchConfigurationDelegate.buildProjects(LaunchConfigurationDelegate.java:421)
+	at org.eclipse.debug.core.model.LaunchConfigurationDelegate.buildForLaunch(LaunchConfigurationDelegate.java:122)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:780)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1054)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2024-10-10 11:15:48.095
+!MESSAGE Exception occurred in listener of Java element change notification
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.core.resources.IResourceDelta.getKind()" because "resourceDelta" is null
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.handleAffectedChildren(PackageExplorerContentProvider.java:773)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.processDelta(PackageExplorerContentProvider.java:758)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.handleAffectedChildren(PackageExplorerContentProvider.java:815)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.processDelta(PackageExplorerContentProvider.java:758)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.elementChanged(PackageExplorerContentProvider.java:139)
+	at org.eclipse.jdt.internal.core.DeltaProcessor$3.run(DeltaProcessor.java:1751)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.notifyListeners(DeltaProcessor.java:1739)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.firePostChangeDelta(DeltaProcessor.java:1572)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.fire(DeltaProcessor.java:1548)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.notifyAndFire(DeltaProcessor.java:2259)
+	at org.eclipse.jdt.internal.core.DeltaProcessor.resourceChanged(DeltaProcessor.java:2151)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState.resourceChanged(DeltaProcessingState.java:501)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:321)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:311)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:174)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:459)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1587)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2465)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2471)
+	at org.eclipse.debug.core.model.LaunchConfigurationDelegate.buildProjects(LaunchConfigurationDelegate.java:421)
+	at org.eclipse.debug.core.model.LaunchConfigurationDelegate.buildForLaunch(LaunchConfigurationDelegate.java:122)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:780)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1054)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-10 15:55:00.192
+!MESSAGE ExecutionException occurred during shutdown of EndpointProxy for org.eclipse.lsp4j.jsonrpc.RemoteEndpoint@48102602
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$10(LanguageServerWrapper.java:564)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+Caused by: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:318)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.request(RemoteEndpoint.java:171)
+	at org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:91)
+	at jdk.proxy13/jdk.proxy13.$Proxy34.shutdown(Unknown Source)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$10(LanguageServerWrapper.java:562)
+	... 7 more
+Caused by: java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:125)
+	at java.base/java.io.BufferedOutputStream.implFlush(BufferedOutputStream.java:252)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:240)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 12 more
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-10 15:55:00.193
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+S:\Current Softwares\spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64\sts-4.25.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-XX:ErrorFile=D:/SPRING_PRACTISE/SPRING_RE/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1728555900192
+-Dlanguageserver.hover-timeout=225
+-jar
+S:\Current Softwares\spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64\sts-4.25.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.57.0.202409101848\servers\spring-boot-language-server\spring-boot-language-server-1.57.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 15:55:00.194
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 15:55:00.199
+!MESSAGE DelegatingStreamConnectionProvider - Stopping Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-10 15:55:00.200
+!MESSAGE Stopped org.springframework.tooling.boot.ls LS process 14188
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-10 15:55:00.206
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 4800
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-10 15:55:06.860
+!MESSAGE ExecutionException occurred during shutdown of EndpointProxy for org.eclipse.lsp4j.jsonrpc.RemoteEndpoint@4f3a00a8
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$10(LanguageServerWrapper.java:564)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+Caused by: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:318)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.request(RemoteEndpoint.java:171)
+	at org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:91)
+	at jdk.proxy23/jdk.proxy23.$Proxy77.shutdown(Unknown Source)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$10(LanguageServerWrapper.java:562)
+	... 7 more
+Caused by: java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:125)
+	at java.base/java.io.BufferedOutputStream.implFlush(BufferedOutputStream.java:252)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:240)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 12 more
+
+!ENTRY org.eclipse.ui 2 0 2024-10-10 16:16:02.634
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Illegal value: -1
+	at org.eclipse.core.internal.resources.Resource.revertModificationStamp(Resource.java:1624)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:348)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:317)
+	at org.eclipse.jdt.internal.ui.javaeditor.DocumentAdapter.save(DocumentAdapter.java:519)
+	at org.eclipse.jdt.internal.core.CommitWorkingCopyOperation.executeOperation(CommitWorkingCopyOperation.java:126)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:739)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2451)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2476)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:809)
+	at org.eclipse.jdt.internal.core.CompilationUnit.commitWorkingCopy(CompilationUnit.java:398)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.commitWorkingCopy(CompilationUnitDocumentProvider.java:1387)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider$3.execute(CompilationUnitDocumentProvider.java:1464)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:133)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:71)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2451)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2476)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:76)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:66)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:461)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:783)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5019)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.performSave(CompilationUnitEditor.java:1267)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSave(CompilationUnitEditor.java:1321)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7237)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:213)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:317)
+	at org.eclipse.ui.internal.SaveableHelper.lambda$1(SaveableHelper.java:195)
+	at org.eclipse.ui.internal.SaveableHelper.lambda$3(SaveableHelper.java:261)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:434)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:354)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$7(WorkbenchWindow.java:2341)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2338)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:268)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:206)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:150)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3819)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3832)
+	at org.eclipse.ui.internal.handlers.SaveHandler.execute(SaveHandler.java:81)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:277)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:204)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:308)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:569)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:644)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:439)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:96)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1319)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1173)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1198)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1183)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1225)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1221)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1704)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4849)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:347)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4727)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5091)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3710)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.ui 2 0 2024-10-10 16:16:09.233
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Illegal value: -1
+	at org.eclipse.core.internal.resources.Resource.revertModificationStamp(Resource.java:1624)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:348)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:317)
+	at org.eclipse.jdt.internal.ui.javaeditor.DocumentAdapter.save(DocumentAdapter.java:519)
+	at org.eclipse.jdt.internal.core.CommitWorkingCopyOperation.executeOperation(CommitWorkingCopyOperation.java:126)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:739)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2451)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2476)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:809)
+	at org.eclipse.jdt.internal.core.CompilationUnit.commitWorkingCopy(CompilationUnit.java:398)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.commitWorkingCopy(CompilationUnitDocumentProvider.java:1387)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider$3.execute(CompilationUnitDocumentProvider.java:1464)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:133)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:71)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2451)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2476)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:76)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:66)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:461)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:783)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5019)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.performSave(CompilationUnitEditor.java:1267)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSave(CompilationUnitEditor.java:1321)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7237)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:213)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:317)
+	at org.eclipse.ui.internal.SaveableHelper.lambda$1(SaveableHelper.java:195)
+	at org.eclipse.ui.internal.SaveableHelper.lambda$3(SaveableHelper.java:261)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:434)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:354)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$7(WorkbenchWindow.java:2341)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2338)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:268)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:206)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:150)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3819)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3832)
+	at org.eclipse.ui.internal.handlers.SaveHandler.execute(SaveHandler.java:81)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:277)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:204)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:308)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:569)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:644)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:439)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:96)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1319)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1173)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1198)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1183)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1225)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1221)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1704)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4849)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:347)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4727)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5091)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3710)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.ui 2 0 2024-10-10 16:16:31.541
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Illegal value: -1
+	at org.eclipse.core.internal.resources.Resource.revertModificationStamp(Resource.java:1624)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:348)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:317)
+	at org.eclipse.jdt.internal.ui.javaeditor.DocumentAdapter.save(DocumentAdapter.java:519)
+	at org.eclipse.jdt.internal.core.CommitWorkingCopyOperation.executeOperation(CommitWorkingCopyOperation.java:126)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:739)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2451)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2476)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:809)
+	at org.eclipse.jdt.internal.core.CompilationUnit.commitWorkingCopy(CompilationUnit.java:398)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.commitWorkingCopy(CompilationUnitDocumentProvider.java:1387)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider$3.execute(CompilationUnitDocumentProvider.java:1464)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:133)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:71)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2451)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2476)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:76)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:66)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:461)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:783)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5019)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.performSave(CompilationUnitEditor.java:1267)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSave(CompilationUnitEditor.java:1321)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7237)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:213)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:317)
+	at org.eclipse.ui.internal.SaveableHelper.lambda$1(SaveableHelper.java:195)
+	at org.eclipse.ui.internal.SaveableHelper.lambda$3(SaveableHelper.java:261)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:434)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:354)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$7(WorkbenchWindow.java:2341)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2338)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:268)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:206)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:150)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3819)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3832)
+	at org.eclipse.ui.internal.handlers.SaveHandler.execute(SaveHandler.java:81)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:277)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:204)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:308)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:569)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:644)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:439)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:96)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1319)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1173)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1198)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1183)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1225)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1221)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1704)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4849)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:347)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4727)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5091)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3710)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-10 17:24:37.407
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-10 17:38:07.390
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-10 17:38:22.408
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-10 17:40:10.905
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-10 22:15:41.774
+!MESSAGE ExecutionException occurred during shutdown of EndpointProxy for org.eclipse.lsp4j.jsonrpc.RemoteEndpoint@3ad1ab76
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$10(LanguageServerWrapper.java:564)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+Caused by: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:318)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.request(RemoteEndpoint.java:171)
+	at org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:91)
+	at jdk.proxy13/jdk.proxy13.$Proxy34.shutdown(Unknown Source)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$10(LanguageServerWrapper.java:562)
+	... 7 more
+Caused by: java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:125)
+	at java.base/java.io.BufferedOutputStream.implFlush(BufferedOutputStream.java:252)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:240)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 12 more
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-10 22:15:41.779
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+S:\Current Softwares\spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64\sts-4.25.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-XX:ErrorFile=D:/SPRING_PRACTISE/SPRING_RE/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1728578741778
+-Dlanguageserver.hover-timeout=225
+-jar
+S:\Current Softwares\spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64\sts-4.25.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.57.0.202409101848\servers\spring-boot-language-server\spring-boot-language-server-1.57.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 22:15:41.782
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-10 22:15:41.784
+!MESSAGE DelegatingStreamConnectionProvider - Stopping Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-10 22:15:41.785
+!MESSAGE Stopped org.springframework.tooling.boot.ls LS process 4800
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-10 22:15:41.797
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 6764
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-10 22:15:42.768
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-10 22:19:19.547
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+!SESSION 2024-10-11 10:20:16.919 -----------------------------------------------
+eclipse.buildId=4.25.0.202409101855
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY ch.qos.logback.classic 1 0 2024-10-11 10:21:15.259
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-10-11 10:23:23.025
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-10-11 10:23:24.972
+!MESSAGE Logback config file: D:\SPRING_PRACTISE\SPRING_RE\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.ui 2 0 2024-10-11 10:23:25.961
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-10-11 10:23:25.961
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2024-10-11 10:23:26.676
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-10-11 10:23:26.676
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-11 10:23:36.134
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+S:\Current Softwares\spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64\sts-4.25.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-XX:ErrorFile=D:/SPRING_PRACTISE/SPRING_RE/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1728622416132
+-Dlanguageserver.hover-timeout=225
+-jar
+S:\Current Softwares\spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64\sts-4.25.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.57.0.202409101848\servers\spring-boot-language-server\spring-boot-language-server-1.57.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-11 10:23:36.135
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-11 10:23:36.218
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 2804
+
+!ENTRY org.eclipse.core.resources 4 567 2024-10-11 10:23:39.906
+!MESSAGE Failure occurred reading .project file.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2024-10-11 10:23:39.906
+!MESSAGE Could not read metadata for '.org.eclipse.egit.core.cmp'.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:978)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:114)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.core.internal.resources.ProjectDescriptionReader.read(ProjectDescriptionReader.java:959)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:959)
+	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:326)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.createProject(HiddenResources.java:285)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.getHiddenProject(HiddenResources.java:271)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.initialize(HiddenResources.java:127)
+	at org.eclipse.core.runtime.jobs.Job$2.run(Job.java:187)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.core.resources 2 567 2024-10-11 10:23:39.909
+!MESSAGE Could not read metadata for '.org.eclipse.egit.core.cmp'.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not allowed in prolog.
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:978)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:114)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.core.internal.resources.ProjectDescriptionReader.read(ProjectDescriptionReader.java:959)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:959)
+	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:326)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.createProject(HiddenResources.java:285)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.getHiddenProject(HiddenResources.java:271)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.initialize(HiddenResources.java:127)
+	at org.eclipse.core.runtime.jobs.Job$2.run(Job.java:187)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.core 2 0 2024-10-11 10:23:39.939
+!MESSAGE Cannot clean up internal hidden project
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/.org.eclipse.egit.core.cmp)[567]: java.lang.Exception: Failed to read the project description file (.project) for '.org.eclipse.egit.core.cmp'.  The file has been changed on disk, and it now contains invalid information.  The project will not function properly until the description file is restored to a valid state.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:979)
+	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:326)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.createProject(HiddenResources.java:285)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.getHiddenProject(HiddenResources.java:271)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.initialize(HiddenResources.java:127)
+	at org.eclipse.core.runtime.jobs.Job$2.run(Job.java:187)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2024-10-11 10:23:39.954
+!MESSAGE Failed to read the project description file (.project) for '.org.eclipse.egit.core.cmp'.  The file has been changed on disk, and it now contains invalid information.  The project will not function properly until the description file is restored to a valid state.
+!STACK 0
+java.lang.Exception: Failed to read the project description file (.project) for '.org.eclipse.egit.core.cmp'.  The file has been changed on disk, and it now contains invalid information.  The project will not function properly until the description file is restored to a valid state.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:979)
+	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:326)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.createProject(HiddenResources.java:285)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.getHiddenProject(HiddenResources.java:271)
+	at org.eclipse.egit.core.internal.efs.HiddenResources.initialize(HiddenResources.java:127)
+	at org.eclipse.core.runtime.jobs.Job$2.run(Job.java:187)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-11 10:23:40.444
+!MESSAGE Boot project ADDED: 01_Spring_Core
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-11 10:23:40.450
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-11 10:23:40.451
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-11 10:23:40.452
+!MESSAGE Boot project ADDED: 02_Spring_Lifecycle
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-11 10:23:40.453
+!MESSAGE Boot project ADDED: 03_Spring_Autowiring
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-11 10:23:40.454
+!MESSAGE Boot project ADDED: 04_Spring_JDBC
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-10-11 10:23:40.456
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ADMIN'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-10-11 10:23:46.352
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.31 has been relocated to com.mysql:mysql-connector-j:jar:8.0.31: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-11 10:26:00.096
+!MESSAGE executing callback sts4.classpath.rhKIPEjV FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-10-11 10:26:00.097
+!MESSAGE TimeoutException
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:31)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-10-11 20:10:56.807
+!MESSAGE ExecutionException occurred during shutdown of EndpointProxy for org.eclipse.lsp4j.jsonrpc.RemoteEndpoint@52aed1fc
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$10(LanguageServerWrapper.java:564)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+Caused by: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:318)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.request(RemoteEndpoint.java:171)
+	at org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:91)
+	at jdk.proxy17/jdk.proxy17.$Proxy51.shutdown(Unknown Source)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$10(LanguageServerWrapper.java:562)
+	... 7 more
+Caused by: java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:125)
+	at java.base/java.io.BufferedOutputStream.implFlush(BufferedOutputStream.java:252)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:240)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 12 more
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-11 20:10:56.877
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+S:\Current Softwares\spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64\sts-4.25.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.4.v20240802-1551\jre\bin\javaw.exe
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-XX:ErrorFile=D:/SPRING_PRACTISE/SPRING_RE/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1728657656809
+-Dlanguageserver.hover-timeout=225
+-jar
+S:\Current Softwares\spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64\sts-4.25.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.57.0.202409101848\servers\spring-boot-language-server\spring-boot-language-server-1.57.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-11 20:10:56.878
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-10-11 20:10:56.879
+!MESSAGE DelegatingStreamConnectionProvider - Stopping Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-11 20:10:56.880
+!MESSAGE Stopped org.springframework.tooling.boot.ls LS process 2804
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-11 20:10:56.885
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 12784
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-10-11 20:11:25.195
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
