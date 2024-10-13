@@ -20,4 +20,8 @@
 		<property name="dataSource"> <ref bean="ds" /> </property>
 	</bean>
 
+	<bean class="com.om.dao.StudentDaoImpl" name="stdDao" >
+		<property name="jdbcTemplate" ref="jdbcTemplate" ></property>
+	</bean>
+
 </beans>
