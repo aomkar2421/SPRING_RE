@@ -2,12 +2,14 @@
 <beans 
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-                    http://www.springframework.org/schema/beans/spring-beans.xsd
-                    http://www.springframework.org/schema/context
-                    http://www.springframework.org/schema/context/spring-context.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<tx:annotation-driven />
 
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="ds">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
@@ -34,6 +36,17 @@
 	</bean>
 	
 	<bean class="org.springframework.orm.hibernate5.HibernateTemplate" name="template">
+		<property name="sessionFactory" ref="factory"></property>
+	</bean>
+	
+	<!--property name in xml file and java file must be same E.g. here we are using template then we need to use template in 
+	class as well and not as hb, tm, etc -->
+	
+	<bean class="com.om.dao.StudentDaoImpl" name="stdDao">
+		<property name="template" ref="template"></property>
+	</bean>
+	
+	<bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" name="transactionManager">
 		<property name="sessionFactory" ref="factory"></property>
 	</bean>
 
