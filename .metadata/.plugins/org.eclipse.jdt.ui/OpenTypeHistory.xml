@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=05_Spring_ORM/C:\/Users\/ADMIN\/.m2\/repository\/org\/springframework\/spring-orm\/5.3.10\/spring-orm-5.3.10.jar=/maven.pomderived=/true=/=/javadoc_location=/jar:file:\/C:\/Users\/ADMIN\/.m2\/repository\/org\/springframework\/spring-orm\/5.3.10\/spring-orm-5.3.10-javadoc.jar\!\/=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-orm=/=/maven.version=/5.3.10=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.orm.hibernate5(HibernateTransactionManager.class[HibernateTransactionManager" modifiers="33" timestamp="1724815149720"/>
+</typeInfoHistroy>
